@@ -26,7 +26,7 @@ module Danger
   #          prose.ignored_words = ["orta", "artsy"]
   #          prose.check_spelling
   #
-  # @see  artsy/artsy.github.io
+  # @see  artsy/artsy.uub.io
   # @tags blogging, blog, writing, jekyll, middleman, hugo, metalsmith, gatsby, express
   #
   class DangerProse < Plugin
@@ -70,7 +70,7 @@ module Danger
       if proses.count > 0
         message = "### Proselint found issues\n\n"
         proses.each do |path, prose|
-          github_loc = "/#{current_slug}/tree/#{github.branch_for_head}/#{path}"
+          github_loc = ""
           message << "#### [#{path}](#{github_loc})\n\n"
 
           message << "Line | Message | Severity |\n"
@@ -160,7 +160,7 @@ module Danger
       if spell_issues.count > 0
         message = "### Spell Checker found issues\n\n"
         spell_issues.each do |path, output|
-          github_loc = "/#{current_slug}/tree/#{github.branch_for_head}/#{path}"
+          github_loc = ""
           message << "#### [#{path}](#{github_loc})\n\n"
 
           message << "Line | Typo |\n"
